@@ -65,6 +65,7 @@ versions.truth = "1.0.1"
 versions.work = "2.2.0"
 versions.hilt = "2.28-alpha"
 versions.androidx_hilt = "1.0.0-alpha02"
+versions.startup = "1.0.0"
 ext.versions = versions
 
 def build_versions = [:]
@@ -225,6 +226,10 @@ hilt.compiler = "com.google.dagger:hilt-android-compiler:$versions.hilt"
 hilt.lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:$versions.androidx_hilt"
 hilt.androidx_compiler = "androidx.hilt:hilt-compiler:$versions.androidx_hilt"
 deps.hilt = hilt
+
+def startup = [:]
+startup.runtime = "androidx.startup:startup-runtime:$versions.startup"
+deps.startup = startup
 
 ext.deps = deps
 
