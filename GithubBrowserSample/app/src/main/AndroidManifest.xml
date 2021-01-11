@@ -19,6 +19,7 @@
     package="com.android.example.github">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".GithubApp"
         android:allowBackup="false"
@@ -28,12 +29,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
 
         <provider
             android:name="androidx.startup.InitializationProvider"

@@ -19,10 +19,7 @@ package com.android.example.github.ui.search
 import android.content.Context
 import android.os.Bundle
 import android.os.IBinder
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingComponent
