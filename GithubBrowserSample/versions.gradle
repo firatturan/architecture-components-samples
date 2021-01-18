@@ -66,6 +66,8 @@ versions.work = "2.2.0"
 versions.hilt = "2.28-alpha"
 versions.androidx_hilt = "1.0.0-alpha02"
 versions.startup = "1.0.0"
+versions.camerax_version = "1.0.0-rc01"
+versions.camera_view = "1.0.0-alpha20"
 ext.versions = versions
 
 def build_versions = [:]
@@ -230,6 +232,12 @@ deps.hilt = hilt
 def startup = [:]
 startup.runtime = "androidx.startup:startup-runtime:$versions.startup"
 deps.startup = startup
+
+def camera = [:]
+camera.camera2 = "androidx.camera:camera-camera2:$versions.camerax_version"
+camera.camera_lifecycle = "androidx.camera:camera-lifecycle:$versions.camerax_version"
+camera.camera_view = "androidx.camera:camera-view:$versions.camera_view"
+deps.camera = camera
 
 ext.deps = deps
 

@@ -93,6 +93,12 @@ class SearchFragment : Fragment() {
                 searchViewModel.refresh()
             }
         }
+
+        binding.fab.setOnClickListener {
+            findNavController().navigate(
+                    SearchFragmentDirections.showCameraX()
+            )
+        }
     }
 
     private fun initSearchInputListener() {

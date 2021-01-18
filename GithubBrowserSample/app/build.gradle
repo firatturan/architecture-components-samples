@@ -22,6 +22,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-allopen'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-android-extensions'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
@@ -101,6 +102,10 @@ dependencies {
     implementation deps.timber
 
     implementation deps.startup.runtime
+
+    implementation deps.camera.camera2
+    implementation deps.camera.camera_lifecycle
+    implementation deps.camera.camera_view
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
