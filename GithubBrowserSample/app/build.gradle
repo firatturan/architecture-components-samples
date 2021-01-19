@@ -24,6 +24,7 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+//apply plugin: 'com.google.gms.google-services' File google-services.json is missing. The Google Services Plugin cannot function without it.
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
@@ -117,6 +118,9 @@ dependencies {
     implementation deps.appsflyer.installreferrer
     implementation deps.revenuecat.runtime
     implementation deps.facebook.runtime
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation platform(deps.firebase.bom)
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler

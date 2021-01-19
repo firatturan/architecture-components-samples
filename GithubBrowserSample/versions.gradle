@@ -75,6 +75,8 @@ versions.appsflyer_installreferrer = "1.1"
 versions.revenucat = "4.0.1"
 versions.facebook = "[5,6)"
 versions.mopub = "+@aar"
+versions.google_services = "4.3.4"
+versions.firebase_bom = "26.3.0"
 ext.versions = versions
 
 def build_versions = [:]
@@ -267,6 +269,14 @@ deps.facebook = facebook
 def mopub = [:]
 mopub.runtime = "com.mopub:mopub-sdk:$versions.mopub"
 deps.mopub = mopub
+
+def google = [:]
+google.play_services = "com.google.gms:google-services:$versions.google_services"
+deps.google = google
+
+def firebase = [:]
+firebase.bom = "com.google.firebase:firebase-bom:$versions.firebase_bom"
+deps.firebase = firebase
 
 ext.deps = deps
 
