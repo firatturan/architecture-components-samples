@@ -144,6 +144,27 @@ dependencies {
     androidTestImplementation deps.arch_core.testing
     androidTestImplementation deps.mockito.core
     androidTestImplementation deps.mockito.android
+
+    // This will get the latest available version of the MoPub SDK.
+    // Alternatively, you may specify a specific version from the changelog to download.
+    implementation(deps.mopub.runtime) {
+        transitive = true
+    }
+
+    // For banners
+    /*implementation('com.mopub:mopub-sdk-banner:+@aar') {
+        transitive = true
+    }*/
+
+    // For fullscreen ads
+    /*implementation('com.mopub:mopub-sdk-fullscreen:+@aar') {
+        transitive = true
+    }*/
+
+    // For native static (images).
+    /*implementation('com.mopub:mopub-sdk-native-static:+@aar') {
+        transitive = true
+    }*/
 }
 
 // we need all open to run tests which we enable only for debug builds.

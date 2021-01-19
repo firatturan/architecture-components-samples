@@ -74,6 +74,7 @@ versions.appsflyer = "6.1.4"
 versions.appsflyer_installreferrer = "1.1"
 versions.revenucat = "4.0.1"
 versions.facebook = "[5,6)"
+versions.mopub = "+@aar"
 ext.versions = versions
 
 def build_versions = [:]
@@ -262,6 +263,10 @@ deps.revenuecat = revenuecat
 def facebook = [:]
 facebook.runtime = "com.facebook.android:facebook-android-sdk:$versions.facebook"
 deps.facebook = facebook
+
+def mopub = [:]
+mopub.runtime = "com.mopub:mopub-sdk:$versions.mopub"
+deps.mopub = mopub
 
 ext.deps = deps
 

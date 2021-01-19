@@ -87,6 +87,10 @@
             <!--<meta-data
                 android:name="com.android.example.github.initializer.RevenueCatInitializer"
                 android:value="androidx.startup" />-->
+
+            <!--<meta-data
+                android:name="com.android.example.github.initializer.MoPubInitializer"
+                android:value="androidx.startup" />-->
         </provider>
 
         <!-- Receivers -->
