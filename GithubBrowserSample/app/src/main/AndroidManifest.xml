@@ -16,7 +16,10 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.android.example.github">
+    package="com.android.example.github"
+    android:allowBackup="false"
+    android:fullBackupContent="false">
+
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -25,6 +28,18 @@
 
     <!-- Declare permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Appsflyer
+    Adding permissions helps increase the rate of Probabilistic modeling attribution.
+    It also allows the SDK to send more data like Wifi and carrier network data.
+    You can find this data in raw data reports and use it for analysis and optimization
+    of campaigns. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- Optional : -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- End of Appsflyer Permissions -->
 
     <application
         android:name=".GithubApp"
@@ -35,7 +50,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -44,8 +60,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -56,6 +73,24 @@
             <meta-data
                 android:name="com.android.example.github.initializer.TimberInitializer"
                 android:value="androidx.startup" />
+
+            <!--<meta-data
+                android:name="com.android.example.github.initializer.OneSignalInitializer"
+                android:value="androidx.startup" />-->
+
+            <!--<meta-data
+                android:name="com.android.example.github.initializer.AppsFlyerInitializer"
+                android:value="androidx.startup" />-->
         </provider>
+
+        <!-- Receivers -->
+        <receiver
+            android:name="com.appsflyer.SingleInstallBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- End of Receivers -->
     </application>
 </manifest>
