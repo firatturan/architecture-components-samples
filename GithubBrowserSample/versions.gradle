@@ -68,6 +68,8 @@ versions.androidx_hilt = "1.0.0-alpha02"
 versions.startup = "1.0.0"
 versions.camerax_version = "1.0.0-rc01"
 versions.camera_view = "1.0.0-alpha20"
+versions.onesignal_plugin = "[0.12.9, 0.99.99]"
+versions.onesignal_runtime = "[4.0.0, 4.99.99]"
 ext.versions = versions
 
 def build_versions = [:]
@@ -152,6 +154,11 @@ kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
 deps.kotlin = kotlin
+
+def onesignal = [:]
+onesignal.plugin = "gradle.plugin.com.onesignal:onesignal-gradle-plugin:$versions.onesignal_plugin"
+onesignal.runtime = "com.onesignal:OneSignal:$versions.onesignal_runtime"
+deps.onesignal = onesignal
 
 def lifecycle = [:]
 lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
@@ -245,5 +252,6 @@ def addRepos(RepositoryHandler handler) {
     handler.google()
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    handler.gradlePluginPortal()
 }
 ext.addRepos = this.&addRepos

@@ -23,6 +23,7 @@ apply plugin: 'kotlin-allopen'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
@@ -106,6 +107,8 @@ dependencies {
     implementation deps.camera.camera2
     implementation deps.camera.camera_lifecycle
     implementation deps.camera.camera_view
+
+    implementation deps.onesignal.runtime
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
