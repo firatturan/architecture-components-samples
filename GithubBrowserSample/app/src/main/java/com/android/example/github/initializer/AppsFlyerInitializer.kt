@@ -8,10 +8,6 @@ import timber.log.Timber
 
 class AppsFlyerInitializer : Initializer<Unit> {
 
-    companion object {
-        const val appsflyerDevKey = "###############"
-    }
-
     override fun create(context: Context) {
         val conversionDataListener = object : AppsFlyerConversionListener {
             override fun onConversionDataSuccess(data: MutableMap<String, Any>?) {
@@ -43,5 +39,9 @@ class AppsFlyerInitializer : Initializer<Unit> {
 
     override fun dependencies(): MutableList<Class<out Initializer<*>>> {
         return mutableListOf(TimberInitializer::class.java)
+    }
+
+    companion object {
+        const val appsflyerDevKey = "###############"
     }
 }

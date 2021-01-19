@@ -72,6 +72,7 @@ versions.onesignal_plugin = "[0.12.9, 0.99.99]"
 versions.onesignal_runtime = "[4.0.0, 4.99.99]"
 versions.appsflyer = "6.1.4"
 versions.appsflyer_installreferrer = "1.1"
+versions.revenucat = "4.0.1"
 ext.versions = versions
 
 def build_versions = [:]
@@ -252,6 +253,10 @@ def appsflyer = [:]
 appsflyer.runtime = "com.appsflyer:af-android-sdk:$versions.appsflyer"
 appsflyer.installreferrer = "com.android.installreferrer:installreferrer:$versions.appsflyer_installreferrer"
 deps.appsflyer = appsflyer
+
+def revenuecat = [:]
+revenuecat.runtime = "com.revenuecat.purchases:purchases:$versions.revenucat"
+deps.revenuecat = revenuecat
 
 ext.deps = deps
 

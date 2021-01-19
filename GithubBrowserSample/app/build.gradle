@@ -115,6 +115,7 @@ dependencies {
     implementation deps.onesignal.runtime
     implementation deps.appsflyer.runtime
     implementation deps.appsflyer.installreferrer
+    implementation deps.revenuecat.runtime
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler

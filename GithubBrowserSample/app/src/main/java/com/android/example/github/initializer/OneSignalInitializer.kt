@@ -16,7 +16,7 @@ class OneSignalInitializer : Initializer<Unit> {
         OneSignal.setAppId(ONESIGNAL_APP_ID)
     }
 
-    override fun dependencies(): List<Class<out Initializer<*>>>  = emptyList()
+    override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()
 
     companion object {
         const val ONESIGNAL_APP_ID = "########-####-####-####-############"
