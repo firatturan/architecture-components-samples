@@ -116,6 +116,7 @@ dependencies {
     implementation deps.appsflyer.runtime
     implementation deps.appsflyer.installreferrer
     implementation deps.revenuecat.runtime
+    implementation deps.facebook.runtime
 
     kapt deps.dagger.android_support_compiler
     kapt deps.dagger.compiler
